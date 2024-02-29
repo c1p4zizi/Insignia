@@ -25,10 +25,8 @@ public class BindCommand extends Command {
         args[2] = args[2].toUpperCase();
         for(final Module m : Insignia.getModuleRepository().getModules()) {
             if(m.getName().equalsIgnoreCase(args[1])) {
-                System.out.println("it's " + args[2]);
                 m.setKey(Keyboard.getKeyIndex(args[2]));
                 ChatUtil.printClientMsg("Bound " + m.getName() + " to " + args[2] + "!");
-                System.out.println(m.getKey());
                 return;
             }
         }
